@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="花都精英论坛 - 花都本地精英人士交流平台，涵盖商业资讯、投资理财、高端生活、房产家居、汽车运动及职场社交。在这里，连接花都精英，共享成功智慧。">
+    <meta name="keywords" content="花都精英论坛, 花都论坛, 广州花都, 花都商业, 花都投资, 花都生活, 花都房产">
+    <title>花都精英论坛-花都本地精英交流与商业资讯平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #d35400;
+            --bg-light: #f8f9fa;
+            --text-main: #333;
+            --text-secondary: #666;
+            --border-color: #e1e4e8;
+            --card-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: #fff;
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.6);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--primary-color);
+        }
+
+        .hero-stats {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .stat-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            background: #eef2f7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Forum List */
+        .forum-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .forum-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 15px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: box-shadow 0.2s;
+        }
+
+        .forum-item:hover {
+            box-shadow: var(--card-shadow);
+            border-color: #dcdcdc;
+        }
+
+        .forum-icon {
+            width: 50px;
+            height: 50px;
+            background: #f0f4f8;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+            color: var(--primary-color);
+        }
+
+        .forum-info {
+            flex: 1;
+        }
+
+        .forum-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .forum-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .forum-meta {
+            text-align: right;
+            min-width: 100px;
+        }
+
+        .forum-count {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .forum-last-post {
+            font-size: 12px;
+            color: var(--accent-color);
+            margin-top: 4px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .widget-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: #eee;
+            color: #666;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 12px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background: #ffd700; color: #fff; }
+        .rank-list li:nth-child(2) .rank-num { background: #c0c0c0; color: #fff; }
+        .rank-list li:nth-child(3) .rank-num { background: #cd7f32; color: #fff; }
+
+        .ad-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        /* Latest Topics */
+        .topic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .topic-item {
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .topic-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .topic-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .topic-meta {
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .topic-tags span {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            margin-right: 5px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .forum-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .forum-meta {
+                text-align: left;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>◆</span> 花都精英论坛
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">商业财经</a>
+                <a href="#">房产家居</a>
+                <a href="#">汽车运动</a>
+                <a href="#">职场社交</a>
+                <a href="#">本地生活</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>汇聚花都智慧，连接城市精英</h1>
+                <p>花都精英论坛致力于打造本地高端人士交流平台，分享商业洞察、投资心得与品质生活。在这里，遇见同行者，共创新未来。</p>
+                <div class="hero-tags">
+                    <span class="tag">商业资讯</span>
+                    <span class="tag">房产投资</span>
+                    <span class="tag">高端生活</span>
+                    <span class="tag">本地社交</span>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-icon">👥</div>
+                    <div>
+                        <div style="font-weight:bold; font-size:18px;">12,580</div>
+                        <div style="font-size:12px; color:#666;">精英会员</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">💬</div>
+                    <div>
+                        <div style="font-weight:bold; font-size:18px;">85,400</div>
+                        <div style="font-size:12px; color:#666;">讨论帖数</div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📍</div>
+                    <div>
+                        <div style="font-weight:bold; font-size:18px;">花都</div>
+                        <div style="font-size:12px; color:#666;">同城服务</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="main-grid">
+            
+            <!-- Forum Categories -->
+            <section>
+                <div class="section-title">
+                    <span>论坛版块</span>
+                    <a href="#">查看更多 &raquo;</a>
+                </div>
+                <div class="forum-list">
+                    <div class="forum-item">
+                        <div class="forum-icon">💼</div>
+                        <div class="forum-info">
+                            <div class="forum-name">商业财经</div>
+                            <div class="forum-desc">探讨宏观经济、企业战略、投资理财与商业案例。</div>
+                        </div>
+                        <div class="forum-meta">
+                            <div class="forum-count">3.2万 帖</div>
+                            <div class="forum-last-post">最新: 2023年花都投资趋势分析</div>
+                        </div>
+                    </div>
+
+                    <div class="forum-item">
+                        <div class="forum-icon">🏠</div>
+                        <div class="forum-info">
+                            <div class="forum-name">房产家居</div>
+                            <div class="forum-desc">楼盘评测、装修设计、二手房交易与家居生活。</div>
+                        </div>
+                        <div class="forum-meta">
+                            <div class="forum-count">5.8万 帖</div>
+                            <div class="forum-last-post">最新: 花都保利城最新动态</div>
+                        </div>
+                    </div>
+
+                    <div class="forum-item">
+                        <div class="forum-icon">🚗</div>
+                        <div class="forum-info">
+                            <div class="forum-name">汽车运动</div>
+                            <div class="forum-desc">爱车养护、车友聚会、自驾游路线分享。</div>
+                        </div>
+                        <div class="forum-meta">
+                            <div class="forum-count">1.5万 帖</div>
+                            <div class="forum-last-post">最新: 本周末花都水库骑行活动</div>
+                        </div>
+                    </div>
+
+                    <div class="forum-item">
+                        <div class="forum-icon">🎓</div>
+                        <div class="forum-info">
+                            <div class="forum-name">职场社交</div>
+                            <div class="forum-desc">职场经验交流、人才招聘、企业HR互动。</div>
+                        </div>
+                        <div class="forum-meta">
+                            <div class="forum-count">2.1万 帖</div>
+                            <div class="forum-last-post">最新: 2024年企业招聘会预告</div>
+                        </div>
+                    </div>
+
+                    <div class="forum-item">
+                        <div class="forum-icon">🍽️</div>
+                        <div class="forum-info">
+                            <div class="forum-name">品质生活</div>
+                            <div class="forum-desc">高端餐饮、旅行摄影、艺术鉴赏与健康养生。</div>
+                        </div>
+                        <div class="forum-meta">
+                            <div class="forum-count">1.2万 帖</div>
+                            <div class="forum-last-post">最新: 花都米其林餐厅探店</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <aside>
+                <!-- Ad Widget -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">广告/赞助</div>
+                    <div class="ad-placeholder">
+                        [广告位：花都高端商务合作]
+                    </div>
+                </div>
+
+                <!-- Hot Topics -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">热门话题</div>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <a href="#" class="topic-title">广州北站商务区发展规划</a>
+                            <div class="topic-meta">
+                                <span>回复 452</span>
+                                <span>2小时前</span>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <a href="#" class="topic-title">花都学区房最新政策解读</a>
+                            <div class="topic-meta">
+                                <span>回复 128</span>
+                                <span>5小时前</span>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <a href="#" class="topic-title">2024年花都车展车型推荐</a>
+                            <div class="topic-meta">
+                                <span>回复 89</span>
+                                <span>昨天</span>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <a href="#" class="topic-title">花都本地高端餐饮榜单</a>
+                            <div class="topic-meta">
+                                <span>回复 234</span>
+                                <span>昨天</span>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <a href="#" class="topic-title">如何有效拓展本地人脉圈</a>
+                            <div class="topic-meta">
+                                <span>回复 56</span>
+                                <span>3天前</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ranking -->
+                <div class="sidebar-widget">
+                    <div class="widget-title">论坛风云榜</div>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-num">1</span>
+                            <a href="#">花都发展论坛</a>
+                        </li>
+                        <li>
+                            <span class="rank-num">2</span>
+                            <a href="#">金融投资实战</a>
+                        </li>
+                        <li>
+                            <span class="rank-num">3</span>
+                            <a href="#">车友会-宝马3系</a>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <a href="#">装修达人交流</a>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <a href="#">职场面试经验</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>关于花都精英论坛</h3>
+                    <p>花都精英论坛是花都区最具影响力的本地高端交流社区，致力于为花都及周边地区的商业精英、职场人士及成功创业者提供一个自由、开放、专业的线上交流平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速导航</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">版块规则</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>热门版块</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">商业财经</a></li>
+                        <li><a href="#">房产家居</a></li>
+                        <li><a href="#">汽车运动</a></li>
+                        <li><a href="#">职场社交</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系我们</h3>
+                    <ul class="footer-links">
+                        <li>邮箱: contact@huaduelite.com</li>
+                        <li>电话: 020-12345678</li>
+                        <li>地址: 广州市花都区新华街商业大道888号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 花都精英论坛 版权所有. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
