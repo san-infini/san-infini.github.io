@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="药流科普指南提供关于药流的权威医学知识、适用人群、用药流程、副作用及注意事项，帮助用户科学了解终止妊娠的相关信息。">
+    <meta name="keywords" content="药流,药物流产,药流注意事项,药流副作用,药流流程,终止妊娠">
+    <title>药流-科学终止妊娠的医学指南与注意事项</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c7be5;
+            --primary-hover: #1a68d4;
+            --secondary-color: #e63757;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(44, 123, 229, 0.1);
+            color: var(--primary-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Warning Banner */
+        .warning-banner {
+            background-color: #fff1f2;
+            border: 1px solid #fecdd3;
+            color: #881337;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        /* Core Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .info-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+        }
+
+        /* Comparison Table */
+        .comparison-container {
+            overflow-x: auto;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        td {
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight-text {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 1.2rem 1.2rem;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid transparent;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            border-top-color: var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .disclaimer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .step-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .step-number {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                药流指南
+            </a>
+            <nav class="nav-links">
+                <a href="#principle">药流原理</a>
+                <a href="#process">流程步骤</a>
+                <a href="#comparison">对比分析</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#contact" class="cta-btn">咨询医生</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="warning-banner">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    医疗建议仅供参考，具体方案请务必咨询专业医生
+                </div>
+                <h1>科学了解药流</h1>
+                <p>药流（药物流产）是一种终止早期妊娠的非手术方式。本文将为您详细解析药流的适用条件、用药流程、潜在副作用及术后注意事项，帮助您做出知情选择。</p>
+                <div class="hero-tags">
+                    <span class="tag">停经49天内</span>
+                    <span class="tag">非宫外孕</span>
+                    <span class="tag">B超确认</span>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <a href="#process" class="cta-btn" style="padding: 0.8rem 2rem; font-size: 1.1rem;">了解流程</a>
+                    <a href="#comparison" class="cta-btn" style="background-color: white; color: var(--primary-color); border: 1px solid var(--primary-color);">对比人流</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Information -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">药流核心要点</h2>
+                    <p class="section-desc">在进行任何决定之前，了解药流的基本医学原理和限制条件至关重要。</p>
+                </div>
+                <div class="info-grid">
+                    <article class="info-card">
+                        <div class="info-icon">📅</div>
+                        <h3>适用时间窗口</h3>
+                        <p>药流通常适用于停经<strong>49天</strong>（7周）以内的早期妊娠。超过这个时间窗，胚胎组织过大，药流的成功率和安全性会显著降低，通常需要转为手术流产。</p>
+                    </article>
+                    <article class="info-card">
+                        <div class="info-icon">🚫</div>
+                        <h3>禁忌人群</h3>
+                        <p>并非所有人都适合药流。患有严重肝肾功能不全、肾上腺皮质功能不全、青光眼、哮喘、癫痫等疾病，或对米非司酮/米索前列醇过敏者，严禁使用药物流产。</p>
+                    </article>
+                    <article class="info-card">
+                        <div class="info-icon">🏥</div>
+                        <h3>确诊要求</h3>
+                        <p>在开始药流前，必须通过<strong>B超</strong>确认是宫内妊娠，且胚胎大小符合要求。排除宫外孕是药流前最关键的检查步骤，因为宫外孕使用药流可能导致大出血危机生命。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="section" id="process" style="background-color: #f1f5f9;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">药流完整流程</h2>
+                    <p class="section-desc">药流并非“吃药”那么简单，它是一个包含检查、用药、观察和复查的严谨医疗过程。</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>术前检查</h4>
+                            <p>进行血常规、凝血功能、白带常规检查，并必须进行B超检查以确定怀孕周数和位置。医生会评估您的身体状况是否适合药流。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>服用米非司酮</h4>
+                            <p>通常在前48小时内服用米非司酮，其作用是“抗孕”，使子宫内的蜕膜组织坏死，促使胚胎停止发育并脱落。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>服用米索前列醇</h4>
+                            <p>在医生的指导下，于第3天服用米索前列醇。此药能引起子宫收缩，排出妊娠囊。此过程通常在医院内进行，以便医生随时处理突发情况。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>术后观察与复查</h4>
+                            <p>排出胚胎组织后，需在医院观察1-2小时，确认无大出血和残留。回家后需遵医嘱服用抗生素和益母草等药物，并需在药流后14天左右复查B超，确认宫内无残留。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">药流与人流对比</h2>
+                    <p class="section-desc">了解两种终止妊娠方式的区别，有助于根据自身情况做出选择。</p>
+                </div>
+                <div class="comparison-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>比较项目</th>
+                                <th>药流</th>
+                                <th>人工流产（手术）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>适用时间</strong></td>
+                                <td>停经49天内</td>
+                                <td>停经10-14周内</td>
+                            </tr>
+                            <tr>
+                                <td><strong>痛苦程度</strong></td>
+                                <td>腹痛较明显，但无需手术器械</td>
+                                <td>手术操作，需麻醉时疼痛较轻</td>
+                            </tr>
+                            <tr>
+                                <td><strong>手术风险</strong></td>
+                                <td>可能发生大出血、药流不全、感染</td>
+                                <td>器械损伤子宫内膜、宫颈裂伤</td>
+                            </tr>
+                            <tr>
+                                <td><strong>恢复速度</strong></td>
+                                <td>身体恢复相对较快</td>
+                                <td>术后需禁欲和休养1-2周</td>
+                            </tr>
+                            <tr>
+                                <td><strong>完整性</strong></td>
+                                <td><span class="highlight-text">药流不全概率较高</span>，需二次清宫</td>
+                                <td>通常一次成功，干净彻底</td>
+                            </tr>
+                            <tr>
+                                <td><strong>心理影响</strong></td>
+                                <td>相对温和，但伴随阵痛</td>
+                                <td>创伤性较强，术后心理压力较大</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" id="faq" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题解答</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            药流失败的概率有多大？
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>药流的失败率（包括药流不全和流产失败）通常在5%到10%左右。药流不全是指妊娠组织未能完全排出，残留部分组织可能引起感染或大出血，通常需要进行清宫手术来处理。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            药流后多久可以洗头洗澡？
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>建议药流后2周内避免盆浴和性生活，以免逆行感染。洗头洗澡建议选择淋浴，且时间不宜过长，注意保暖，避免受凉感冒。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            药流会影响以后的生育吗？
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>只要在正规医疗机构由专业医生操作，并做好术后护理，药流通常不会对以后的生育能力造成明显影响。但多次流产会增加子宫内膜受损的风险，因此应严格做好避孕措施。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer Banner -->
+        <section class="section">
+            <div class="container">
+                <div style="background: #fff; border: 1px solid #e2e8f0; padding: 2rem; border-radius: 12px; text-align: center;">
+                    <h3 style="margin-bottom: 1rem; color: var(--text-main);">免责声明</h3>
+                    <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto;">
+                        本网站提供的信息仅供科普参考，不能替代专业医生的诊断、治疗方案和建议。药流属于医疗行为，具有潜在风险，请务必前往正规医院进行咨询和操作。任何基于本网站信息的行动风险由用户自行承担。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于药流指南</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        我们致力于提供准确、客观的医学知识普及，帮助女性了解终止妊娠的各种方式及其利弊，倡导科学就医和健康避孕。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#principle">药流原理</a></li>
+                        <li><a href="#process">流程步骤</a></li>
+                        <li><a href="#comparison">人流对比</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关服务</h4>
+                    <ul>
+                        <li><a href="#">预约挂号</a></li>
+                        <li><a href="#">在线咨询</a></li>
+                        <li><a href="#">健康检查</a></li>
+                        <li><a href="#">隐私保护</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>&copy; 2023 药流指南科普网. All Rights Reserved. 本页面内容仅供学习与交流，不构成医疗建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
