@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹球机-经典街机游戏收藏与玩法指南</title>
+    <meta name="description" content="本站提供全面的弹球机收藏指南，涵盖经典型号如Bally Stern Gottlieb的机械结构与玩法技巧，包含模拟器下载推荐、复古游戏攻略及维护保养知识。">
+    <meta name="keywords" content="弹球机, 街机, 复古游戏, 弹球玩法, 弹球机收藏, 街机模拟器">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff0055;
+            --secondary-color: #00ccff;
+            --accent-color: #ffcc00;
+            --dark-bg: #1a1a1a;
+            --card-bg: #2a2a2a;
+            --text-main: #f0f0f0;
+            --text-muted: #aaaaaa;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background: rgba(26, 26, 26, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0.8rem 0;
+            backdrop-filter: blur(5px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary-color), #cc0044);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #2a0a1a 0%, #1a1a1a 70%);
+            border-bottom: 1px solid #333;
+        }
+
+        .hero-content {
+            z-index: 2;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Main Content Grid */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        /* Featured Machines Grid */
+        .machine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .machine-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #333;
+        }
+
+        .machine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            border-color: var(--primary-color);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .machine-card:hover .card-image img {
+            opacity: 1;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .manufacturer {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        /* Guide & FAQ Section */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .guide-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+
+        .guide-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .guide-section p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: #333;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+        }
+
+        .faq-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Simulation Section */
+        .simulator-preview {
+            background: linear-gradient(to right, #2a0a1a, #1a0a2a);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 3rem;
+            border: 1px solid #444;
+        }
+
+        .simulator-preview h3 {
+            margin-bottom: 1rem;
+        }
+
+        .simulator-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: var(--secondary-color);
+            color: #000;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .simulator-btn:hover {
+            background: #0099cc;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-wrapper { flex-direction: column; gap: 1rem; }
+            nav ul { gap: 1rem; font-size: 0.9rem; }
+            .content-layout { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <div class="logo">
+            <span>●</span> Pinball Master
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#machines">经典机型</a></li>
+                <li><a href="#guide">玩法指南</a></li>
+                <li><a href="#simulator">在线试玩</a></li>
+                <li><a href="#community">玩家社区</a></li>
+            </ul>
+        </nav>
+        <a href="#simulator" class="cta-btn">立即试玩</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>重温街机黄金时代</h1>
+        <p>探索弹球机的机械艺术、经典游戏与复古魅力。从机械结构到现代模拟器，这里应有尽有。</p>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <h3>1000+</h3>
+                <p>收录机型</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>模拟器版本</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>复古体验</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+
+    <!-- Featured Machines Section -->
+    <section id="machines">
+        <div class="section-title">
+            <span>热门经典机型</span>
+            <a href="#">查看全部 &rarr;</a>
+        </div>
+        
+        <div class="machine-grid">
+            <!-- Machine 1 -->
+            <article class="machine-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/pinball1/400/300" alt="铁球风暴游戏机">
+                </div>
+                <div class="card-content">
+                    <span class="manufacturer">Bally / 1980</span>
+                    <h3>铁球风暴</h3>
+                    <p class="card-desc">以闪电为主题，拥有标志性的“闪电轨道”和极具挑战性的“超级球”规则，是80年代最畅销的弹球机之一。</p>
+                    <div class="card-tags">
+                        <span class="tag">物理机</span>
+                        <span class="tag">高难度</span>
+                        <span class="tag">闪电主题</span>
+                    </div>
+                    <a href="#" style="color:var(--secondary-color); font-size:0.9rem; font-weight:bold;">查看详情</a>
+                </div>
+            </article>
+
+            <!-- Machine 2 -->
+            <article class="machine-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/pinball2/400/300" alt="太空大战游戏机">
+                </div>
+                <div class="card-content">
+                    <span class="manufacturer">Gottlieb / 1977</span>
+                    <h3>太空大战</h3>
+                    <p class="card-desc">致敬经典电影《星球大战》的早期作品，拥有独特的“弹射器”机制，能够将球以极高速度射出。</p>
+                    <div class="card-tags">
+                        <span class="tag">科幻</span>
+                        <span class="tag">经典</span>
+                        <span class="tag">电影联名</span>
+                    </div>
+                    <a href="#" style="color:var(--secondary-color); font-size:0.9rem; font-weight:bold;">查看详情</a>
+                </div>
+            </article>
+
+            <!-- Machine 3 -->
+            <article class="machine-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/pinball3/400/300" alt="魔术师游戏机">
+                </div>
+                <div class="card-content">
+                    <span class="manufacturer">Stern / 2016</span>
+                    <h3>魔术师</h3>
+                    <p class="card-desc">现代弹球机的代表作品，拥有极具视觉冲击力的灯光秀和深度的游戏规则，适合新手与高手。</p>
+                    <div class="card-tags">
+                        <span class="tag">现代</span>
+                        <span class="tag">灯光秀</span>
+                        <span class="tag">休闲</span>
+                    </div>
+                    <a href="#" style="color:var(--secondary-color); font-size:0.9rem; font-weight:bold;">查看详情</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="content-layout">
+        <!-- Guide Section -->
+        <section id="guide">
+            <div class="section-title">
+                <span>新手玩法指南</span>
+            </div>
+            
+            <div class="guide-section">
+                <h3>1. 基本操作与规则</h3>
+                <p>弹球机的核心在于控制弹簧发射的球体。玩家通过拨动左侧或右侧的挡板来改变球的轨迹，使其击中场上的目标（如打孔器、斜坡、弹射器）以获得分数。大多数现代机型都有多个“打孔器”，击中它们可以积攒“多球”奖励。</p>
+                <h3>2. 机器结构简介</h3>
+                <p>弹球机主要由机械部分和电子部分组成。机械部分包括挡板、线圈和弹簧；电子部分则负责计分和灯光控制。了解机器的“打孔器”位置和“弹射器”力度是提高分数的关键。</p>
+            </div>
+
+            <div class="simulator-preview">
+                <h3>在浏览器中体验复古弹球</h3>
+                <p>无需下载，直接体验经典的弹球乐趣。</p>
+                <a href="#" class="simulator-btn">启动模拟器</a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <aside id="faq">
+            <div class="section-title">
+                <span>常见问题 (FAQ)</span>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>弹球机和乒乓球有什么区别？</h4>
+                    <p>弹球机使用的是弹簧发射的球，球体更重且速度更快，依靠物理碰撞得分，而非单纯的防守。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>如何保养实体弹球机？</h4>
+                    <p>定期清洁灯泡和玻璃，检查弹簧张力，并在不使用时断开电源以防止电容老化。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>有哪些好的模拟器推荐？</h4>
+                    <p>VPinMAME配合Visual Pinball是目前最受欢迎的模拟器组合，支持物理插件。</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于 Pinball Master</h4>
+                <p>致力于推广街机文化，为复古游戏爱好者提供详尽的资料库和交流平台。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">机型图鉴</a></li>
+                    <li><a href="#">模拟器下载</a></li>
+                    <li><a href="#">维修手册</a></li>
+                    <li><a href="#">二手交易</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>邮箱：contact@pinballmaster.com</li>
+                    <li>地址：复古游戏街机收藏中心</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Pinball Master. 保留所有权利。</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
