@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="美人鱼的图片 - 专注美人鱼主题的高清视觉素材库，提供多种风格的人鱼插画、摄影作品及艺术壁纸，满足收藏、设计及个人欣赏需求。">
+    <meta name="keywords" content="美人鱼的图片,人鱼插画,海洋壁纸,二次元人鱼,美人鱼摄影">
+    <title>美人鱼的图片 - 高清人鱼视觉素材与艺术壁纸库</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #0284c7;
+            --accent-color: #f43f5e;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-secondary: #64748b;
+            --border-radius: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .search-bar {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 16px 24px;
+            padding-right: 50px;
+            border-radius: 50px;
+            border: 2px solid #e2e8f0;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Filter Tags */
+        .filters {
+            max-width: 1200px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .filter-container {
+            background: var(--card-bg);
+            padding: 12px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .filter-tag {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+        }
+
+        .filter-tag:hover {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+        }
+
+        .filter-tag.active {
+            background-color: #e0f2fe;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* Gallery Grid */
+        .gallery-section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+        }
+
+        .view-options {
+            display: flex;
+            gap: 15px;
+        }
+
+        .view-btn {
+            background: none;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 6px 12px;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .view-btn.active {
+            background: var(--text-main);
+            color: white;
+            border-color: var(--text-main);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .image-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-image-wrapper {
+            width: 100%;
+            padding-top: 140%; /* 5:7 Aspect Ratio */
+            position: relative;
+            background: #e2e8f0;
+        }
+
+        .card-image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 16px;
+        }
+
+        .image-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .card-overlay h3 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            transform: translateY(10px);
+            transition: transform 0.3s;
+        }
+
+        .card-overlay p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            transform: translateY(10px);
+            transition: transform 0.3s 0.05s;
+        }
+
+        .image-card:hover .card-overlay h3,
+        .image-card:hover .card-overlay p {
+            transform: translateY(0);
+        }
+
+        .card-info {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Feature Section */
+        .features {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #e0f2fe;
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f8fafc;
+        }
+
+        .faq-answer p {
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            nav ul {
+                display: none; /* Simplified mobile nav */
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 16px;
+            }
+
+            .card-image-wrapper {
+                padding-top: 120%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5a9.5 9.5 0 0 0-9 6.6 9.5 9.5 0 0 0 0 6.8 9.5 9.5 0 0 0 9 6.6 9.5 9.5 0 0 0 9-6.6 9.5 9.5 0 0 0 0-6.8 9.5 9.5 0 0 0-9-6.6z"></path><path d="M12 2.5v19"></path><path d="M8.5 8.5a2.5 2.5 0 0 1 0 5"></path><path d="M15.5 13.5a2.5 2.5 0 0 1 0-5"></path></svg>
+                <span>海妖图库</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">高清壁纸</a></li>
+                    <li><a href="#">插画素材</a></li>
+                    <li><a href="#">摄影作品</a></li>
+                    <li><a href="#">AI生成</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索海底的奇幻之美</h1>
+            <p>汇集全球精选美人鱼的图片资源，无论是写实摄影、唯美插画还是二次元同人，都能在这里找到灵感。</p>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索美人鱼、人鱼姬、海洋等关键词...">
+                <button aria-label="搜索图片">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="filters">
+        <div class="filter-container">
+            <div class="filter-tag active">全部</div>
+            <div class="filter-tag">唯美插画</div>
+            <div class="filter-tag">二次元</div>
+            <div class="filter-tag">写实摄影</div>
+            <div class="filter-tag">暗黑风格</div>
+            <div class="filter-tag">赛博朋克</div>
+            <div class="filter-tag">古风人鱼</div>
+            <div class="filter-tag">小美人鱼</div>
+        </div>
+    </div>
+
+    <main class="gallery-section">
+        <div class="section-header">
+            <h2>热门推荐</h2>
+            <div class="view-options">
+                <button class="view-btn active">网格</button>
+                <button class="view-btn">列表</button>
+            </div>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Card 1 -->
+            <article class="image-card">
+                <div class="card-image-wrapper">
+                    <img src="https://picsum.photos/seed/mermaid1/400/560" alt="梦幻人鱼插画">
+                    <div class="card-overlay">
+                        <h3>深蓝梦境</h3>
+                        <p>唯美风格 · 4K壁纸</p>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">深蓝梦境</h3>
+                    <div class="card-meta">
+                        <span>1.2k 收藏</span>
+                        <span>2023-10-24</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="image-card">
+                <div class="card-image-wrapper">
+                    <img src="https://picsum.photos/seed/mermaid2/400/560" alt="赛博人鱼">
+                    <div class="card-overlay">
+                        <h3>霓虹人鱼</h3>
+                        <p>赛博朋克 · 原创插画</p>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">霓虹人鱼</h3>
+                    <div class="card-meta">
+                        <span>856 收藏</span>
+                        <span>2023-10-23</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="image-card">
+                <div class="card-image-wrapper">
+                    <img src="https://picsum.photos/seed/mermaid3/400/560" alt="古风人鱼">
+                    <div class="card-overlay">
+                        <h3>沧海遗珠</h3>
+                        <p>古风 · 唯美摄影</p>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">沧海遗珠</h3>
+                    <div class="card-meta">
+                        <span>2.1k 收藏</span>
+                        <span>2023-10-22</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="image-card">
+                <div class="card-image-wrapper">
+                    <img src="https://picsum.photos/seed/mermaid4/400/560" alt="暗黑人鱼">
+                    <div class="card-overlay">
+                        <h3>深渊凝视</h3>
+                        <p>暗黑风格 · 矢量图</p>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">深渊凝视</h3>
+                    <div class="card-meta">
+                        <span>634 收藏</span>
+                        <span>2023-10-21</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="image-card">
+                <div class="card-image-wrapper">
+                    <img src="https://picsum.photos/seed/mermaid5/400/560" alt="小美人鱼">
+                    <div class="card-overlay">
+                        <h3>泡沫之恋</h3>
+                        <p>童话故事 · 二次元</p>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">泡沫之恋</h3>
+                    <div class="card-meta">
+                        <span>3.5k 收藏</span>
+                        <span>2023-10-20</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="image-card">
+                <div class="card-image-wrapper">
+                    <img src="https://picsum.photos/seed/mermaid6/400/560" alt="人鱼公主">
+                    <div class="card-overlay">
+                        <h3>海洋女王</h3>
+                        <p>史诗风格 · 壁纸</p>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">海洋女王</h3>
+                    <div class="card-meta">
+                        <span>1.8k 收藏</span>
+                        <span>2023-10-19</span>
+                    </div>
+                </div>
+            </article>
+
+             <!-- Card 7 -->
+             <article class="image-card">
+                <div class="card-image-wrapper">
+                    <img src="https://picsum.photos/seed/mermaid7/400/560" alt="简约人鱼">
+                    <div class="card-overlay">
+                        <h3>极简线条</h3>
+                        <p>设计素材 · 矢量</p>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">极简线条</h3>
+                    <div class="card-meta">
+                        <span>920 收藏</span>
+                        <span>2023-10-18</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 8 -->
+            <article class="image-card">
+                <div class="card-image-wrapper">
+                    <img src="https://picsum.photos/seed/mermaid8/400/560" alt="梦幻人鱼">
+                    <div class="card-overlay">
+                        <h3>星光人鱼</h3>
+                        <p>梦幻摄影 · 4K</p>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">星光人鱼</h3>
+                    <div class="card-meta">
+                        <span>1.5k 收藏</span>
+                        <span>2023-10-17</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <h3>高清画质</h3>
+                <p>所有美人鱼的图片均经过精心筛选，支持4K及更高分辨率下载，适合大屏展示。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+                </div>
+                <h3>免费商用</h3>
+                <p>大量素材支持免费商用，设计师可放心使用于项目、海报及商业设计中。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3>每日更新</h3>
+                <p>紧跟潮流，每日上传最新的人鱼插画与摄影作品，保持内容的新鲜感。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2 style="text-align: center; margin-bottom: 40px;">常见问题</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">这些美人鱼的图片可以用于商业设计吗？</div>
+            <div class="faq-answer">
+                <p>是的，本站大部分插画和摄影作品均标注为“可商用”或“免费”，具体请查看每张图片的详细版权说明。建议在下载前仔细阅读授权协议。</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">如何下载高清的美人鱼图片？</div>
+            <div class="faq-answer">
+                <p>点击任意一张图片卡片即可进入详情页。在详情页中，您可以找到“下载原图”或“查看大图”的按钮，选择您需要的分辨率进行下载。</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">网站是否支持手机端浏览美人鱼的图片？</div>
+            <div class="faq-answer">
+                <p>完全支持。网站采用了响应式设计，在手机、平板和电脑上都能获得流畅的浏览体验，并针对移动端优化了图片加载速度。</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">我可以投稿自己的美人鱼作品吗？</div>
+            <div class="faq-answer">
+                <p>我们欢迎优质的人鱼主题原创作品投稿。请通过底部的联系邮箱发送您的作品集及作者简介，经过审核后即可上架。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>海妖图库</h4>
+                <p style="font-size: 0.9rem; line-height: 1.8;">专注于海洋生物与人鱼主题的视觉素材分享平台，为设计师与爱好者提供高质量的图片资源。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">最新上传</a></li>
+                    <li><a href="#">热门排行</a></li>
+                    <li><a href="#">分类浏览</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>版权声明</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">使用条款</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 海妖图库 版权所有. 仅供演示使用。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的筛选标签交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTags = document.querySelectorAll('.filter-tag');
+            
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    // 移除所有激活状态
+                    filterTags.forEach(t => t.classList.remove('active'));
+                    // 激活当前标签
+                    this.classList.add('active');
+                    
+                    // 模拟筛选效果（此处仅为视觉反馈）
+                    const galleryGrid = document.querySelector('.gallery-grid');
+                    galleryGrid.style.opacity = '0.5';
+                    setTimeout(() => {
+                        galleryGrid.style.opacity = '1';
+                    }, 200);
+                });
+            });
+
+            // FAQ 手风琴效果
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
