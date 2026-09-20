@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="美剧窝 - 您的高清美剧在线观看与追剧指南平台。提供最新美剧资源、热门剧集推荐、经典老剧回顾及详细剧情介绍。">
+    <meta name="keywords" content="美剧窝, 美剧在线观看, 高清美剧, 最新美剧, 美剧推荐, 追剧指南">
+    <title>美剧窝-高清美剧在线观看与追剧指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914; /* Netflix Red style */
+            --primary-hover: #b20710;
+            --bg-color: #141414;
+            --card-bg: #1f1f1f;
+            --text-main: #ffffff;
+            --text-secondary: #b3b3b3;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 4%;
+            transition: background-color 0.3s;
+        }
+
+        header.scrolled {
+            background-color: rgba(0,0,0,0.95);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            margin-right: 40px;
+            white-space: nowrap;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .nav-menu a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--text-main);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            padding: 8px 12px;
+            border-radius: 4px;
+            color: white;
+            outline: none;
+            width: 200px;
+            transition: width 0.3s;
+        }
+
+        .search-box input:focus {
+            width: 280px;
+            border-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            width: 100%;
+            background-image: url('https://picsum.photos/seed/hero2/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            padding-left: 4%;
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: rgba(109, 109, 110, 0.7);
+            color: white;
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(109, 109, 110, 0.4);
+        }
+
+        /* Main Layout */
+        main {
+            padding-top: 20px;
+        }
+
+        .section-container {
+            padding: 0 4% 40px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-more {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Grid System */
+        .grid-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-row.wide {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-poster {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background-color: #333;
+            position: relative;
+        }
+
+        .card-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-rating {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: rgba(0,0,0,0.8);
+            color: #46d369;
+            font-size: 0.8rem;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 2px 5px;
+            border-radius: 2px;
+            background-color: #333;
+            color: #aaa;
+        }
+
+        /* Categories */
+        .category-nav {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .category-nav::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .cat-item {
+            white-space: nowrap;
+            padding: 8px 16px;
+            background-color: #333;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .cat-item:hover, .cat-item.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-box {
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background-color: #1f1f1f;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 50px 4% 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                height: 60px;
+                padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+                margin-right: 20px;
+            }
+
+            .nav-menu {
+                display: none; /* Hide nav on mobile for simplicity */
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .hero {
+                height: 60vh;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .grid-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .grid-row.wide {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <a href="#" class="logo">美剧窝</a>
+        <nav class="nav-menu">
+            <a href="#" class="active">首页</a>
+            <a href="#">美剧推荐</a>
+            <a href="#">最新更新</a>
+            <a href="#">高分经典</a>
+            <a href="#">美剧百科</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索美剧、演员...">
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">本周热门</span>
+            <h1>绝命毒师<br>The Wire</h1>
+            <div class="hero-meta">
+                <span>2008</span>
+                <span>•</span>
+                <span>5季全</span>
+                <span>•</span>
+                <span>剧情 / 犯罪</span>
+                <span>•</span>
+                <span>IMDb 9.5</span>
+            </div>
+            <p class="hero-desc">
+                一位老实巴交的高中化学老师被确诊患有晚期肺癌，为了给家人留下财富，他决定利用自己的化学知识制造并贩卖高纯度冰毒。
+            </p>
+            <div>
+                <a href="#" class="btn btn-primary">立即观看</a>
+                <a href="#" class="btn btn-secondary">+ 加入片单</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Categories -->
+        <div class="section-container">
+            <div class="category-nav">
+                <a href="#" class="cat-item active">全部</a>
+                <a href="#" class="cat-item">悬疑</a>
+                <a href="#" class="cat-item">科幻</a>
+                <a href="#" class="cat-item">喜剧</a>
+                <a href="#" class="cat-item">剧情</a>
+                <a href="#" class="cat-item">动作</a>
+                <a href="#" class="cat-item">犯罪</a>
+                <a href="#" class="cat-item">医疗</a>
+                <a href="#" class="cat-item">律政</a>
+            </div>
+        </div>
+
+        <!-- New Arrivals -->
+        <section class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">最新更新</h2>
+                <a href="#" class="section-more">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-row wide">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/series1/300/450" alt="剧集海报">
+                        <span class="card-rating">9.8</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">暗黑物质</h3>
+                        <div class="card-meta">
+                            <span>科幻</span>
+                            <span>S3 E8</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/series2/300/450" alt="剧集海报">
+                        <span class="card-rating">8.9</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">华尔街之狼</h3>
+                        <div class="card-meta">
+                            <span>传记</span>
+                            <span>S4 E12</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/series3/300/450" alt="剧集海报">
+                        <span class="card-rating">9.2</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">纸牌屋</h3>
+                        <div class="card-meta">
+                            <span>政治</span>
+                            <span>S6 E10</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/series4/300/450" alt="剧集海报">
+                        <span class="card-rating">7.5</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">风骚律师</h3>
+                        <div class="card-meta">
+                            <span>律政</span>
+                            <span>S5 E8</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section-container">
+            <div class="features">
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">极速播放</h3>
+                    <p class="feature-text">采用高清CDN加速技术，支持4K画质流畅播放，告别卡顿。</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📺</div>
+                    <h3 class="feature-title">全网收录</h3>
+                    <p class="feature-text">覆盖HBO, Netflix, ABC, CBS等主流平台最新剧集资源。</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">多端同步</h3>
+                    <p class="feature-text">手机、平板、电脑无缝切换，随时随地追剧不中断。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Rated -->
+        <section class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">高分经典</h2>
+                <a href="#" class="section-more">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-row">
+                <!-- Small Cards -->
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/series5/200/300" alt="剧集海报">
+                        <span class="card-rating">9.5</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">老友记</h3>
+                        <div class="card-meta">
+                            <span>情景喜剧</span>
+                            <span>10季</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/series6/200/300" alt="剧集海报">
+                        <span class="card-rating">9.4</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">权力的游戏</h3>
+                        <div class="card-meta">
+                            <span>奇幻</span>
+                            <span>8季</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/series7/200/300" alt="剧集海报">
+                        <span class="card-rating">9.3</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">绝命毒师</h3>
+                        <div class="card-meta">
+                            <span>犯罪</span>
+                            <span>5季</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-poster">
+                        <img src="https://picsum.photos/seed/series8/200/300" alt="剧集海报">
+                        <span class="card-rating">9.1</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">斯巴达克斯</h3>
+                        <div class="card-meta">
+                            <span>历史</span>
+                            <span>4季</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section-container faq-container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题</h2>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">网站上的资源是免费的吗？</div>
+                <div class="faq-answer">
+                    是的，美剧窝致力于为用户提供免费的高品质美剧观看服务。我们通过合法的链接聚合资源，帮助用户更方便地找到想看的内容。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">支持哪些观看设备？</div>
+                <div class="faq-answer">
+                    美剧窝完美支持PC端浏览器、iOS/Android手机以及平板设备。无需下载APP，网页端即可获得流畅的观看体验。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何获取最新剧集的更新通知？</div>
+                <div class="faq-answer">
+                    您可以关注我们的社交媒体账号，或者直接在网站上点击“订阅更新”按钮，第一时间收到新剧上线提醒。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于美剧窝</h4>
+                <p>美剧窝是专注美剧资源分享的在线社区，致力于连接全球美剧迷，提供最新、最全、最流畅的观影体验。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">热门推荐</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">美剧榜单</a></li>
+                    <li><a href="#">会员专区</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">HBO剧集</a></li>
+                    <li><a href="#">Netflix原创</a></li>
+                    <li><a href="#">漫威宇宙</a></li>
+                    <li><a href="#">迪士尼+</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">意见反馈</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">广告合作</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 美剧窝. All Rights Reserved. 本站内容仅供学习交流，请于下载后24小时内删除。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                // Close others
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) otherItem.classList.remove('active');
+                });
+                // Toggle current
+                item.classList.toggle('active');
+            });
+        });
+
+        // Category Tab Logic (Visual only)
+        const catItems = document.querySelectorAll('.cat-item');
+        catItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                catItems.forEach(c => c.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+  </html>
